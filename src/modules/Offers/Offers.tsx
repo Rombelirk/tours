@@ -8,8 +8,8 @@ interface Props {
 }
 
 const Offers: FC<Props> = ({ data }) => {
-    console.log(data);
-    return <Container>{data.offers.map((offer) => <Offer offer={offer} />)}</Container>;
+    return <Container>{data.offers.map((offer) =>
+        <Offer offer={offer} />)}</Container>;
 };
 
 export default Offers;

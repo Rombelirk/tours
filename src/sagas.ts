@@ -1,8 +1,8 @@
-import { takeLatest, takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 import { storeData, storeOffer, storeOptions } from './actions/fetchData';
 import { FETCH_DATA, FETCH_OFFER, FETCH_OPTIONS } from './action_types/action_types';
-import { mockData } from './mocks/data';
+
 
 function* fetchOffers(action) {
     const { searchTerm } = action;
@@ -11,7 +11,7 @@ function* fetchOffers(action) {
         yield put(storeData(data.data));
     } catch (e) {
         console.log('error', e);
-        yield put(storeData(mockData));
+
     }
 }
 
@@ -22,7 +22,7 @@ function* fetchOffer(action) {
         yield put(storeOffer(data.data));
     } catch (e) {
         console.log('error', e);
-        yield put(storeOffer(mockData));
+
     }
 }
 

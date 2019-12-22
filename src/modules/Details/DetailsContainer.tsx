@@ -4,19 +4,19 @@ import Details from './Details';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter, RouteComponentProps } from 'react-router';
-import { IOffer } from '../../interfaces/data'
+import { IExtendedOffer } from '../../interfaces/data'
+
 
 interface Params {
     id: string;
 }
 
 interface Props extends RouteComponentProps<Params> {
-    offer: IOffer;
+    offer: IExtendedOffer;
 }
 
 const DetailsContainer: FC<Props> = (props) => {
     const offer = props.offer;
-    //@ts-ignore
     const id = props.match.params.id;
 
     //@ts-ignore    

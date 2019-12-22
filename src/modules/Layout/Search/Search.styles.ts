@@ -1,21 +1,25 @@
 import styled from 'styled-components';
 
 export const Suggestions = styled.div`
-  
     position: absolute;
-    width: 120px;
-
+    width: 240px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background-color: white;
+    z-index: 1; 
 `;
 
 export const Suggestion = styled.div`
     color: black;
-    background-color: white;
+    box-sizing: border-box;
     position: relative;
-    width: 120px;
-    height: 60px;
-    border: 1px solid black;
+    width: 100%;    
+    height: fit-content;
+    padding: 6px 4px;
     cursor: pointer;
-    
+    &:hover {
+        background-color: #efefef;
+    }
 `;
 
 

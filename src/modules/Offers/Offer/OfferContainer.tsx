@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { withRouter } from 'react-router';
 import Offer from './Offer'
+import { RouteComponentProps } from 'react-router'
+import { IOffer } from '../../../interfaces/data'
 
-const OfferContainer = ({ history, ...props }) => {
+interface Props extends RouteComponentProps {
+    offer: IOffer
+}
+
+const OfferContainer: FC<Props> = ({ history, ...props }) => {
     const onOfferSelect = id => {
         history.push(`/details/${id}`)
     }
-    //@ts-ignore
+
     return <Offer {...props} onOfferSelect={onOfferSelect} />
 }
 

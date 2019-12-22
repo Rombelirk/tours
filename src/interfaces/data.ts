@@ -1,48 +1,61 @@
-
-
 export interface IData {
     offers: IOffer[]
+}
+export interface ILocation {
+    lat: number;
+    lng: number;
+    name: string;
+}
+
+export interface IDetails {
+    apartmentType: string;
+    apartmentTypeTitle: string;
+    bedroomsCount: number;
+    guestsCount: number;
+    name: string;
+
+}
+export interface IProvider {
+    id: string;
+    legalName: string;
+    logoUrl: string;
+    shortName: string;
+}
+export interface IRating {
+    count: number;
+    value: number;
+}
+
+export interface IPrice {
+    ccy: string;
+    currency: string;
+    daily: number;
+    nights: number;
+    total: number;
 }
 
 export interface IOffer {
     id: string;
-    photos: Photo[];
-    detailsLink: string; // holidu.com + ...
-    price: {
-        ccy: string; // EUR
-        currency: string; // EUR
-        daily: number;
-        nights: number;
-        total: number; // nights * daily
-    };
-    rating: {
-        count: number; // (count reviews)
-        value: number; // 5/100*value => stars
-    }
-    provider: {
-        id: string;
-        legalName: string;
-        logoUrl: string;
-        shortName: string;
-    }
-    details: {
-        apartmentType: string;
-        apartmentTypeTitle: string;
-        bedroomsCount: number;
-        guestsCount: number;
-        name: string;
-        location: {
-            lat: number;
-            lng: number;
-            name: string;
-        }
-    }
-
+    photos: IPhoto[];
+    detailsLink: string;
+    price: IPrice;
+    rating: IRating;
+    provider: IProvider;
+    details: IDetails
+    location: ILocation;
 }
 
-export interface Photo {
+export interface IPhoto {
     hr: string;
     l: string;
     m: string;
     t: string;
+}
+
+interface IExtendedDetails extends IDetails {
+    description: string;
+}
+
+export interface IExtendedOffer extends IOffer {
+    details: IExtendedDetails;
 }

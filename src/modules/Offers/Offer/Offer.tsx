@@ -1,14 +1,23 @@
 import React, { FC } from 'react';
 import { IOffer } from '../../../interfaces/data'
 import { Card } from '../../../atoms/Card/Card.styled'
-import { Container, Info, Name, Rating, StarsContainer, VotesCount, StarImage, PriceContainer, Price, NightsCount } from './Offer.styles'
+import {
+    Container,
+    Info,
+    Name,
+    Rating,
+    StarsContainer,
+    VotesCount,
+    StarImage,
+    PriceContainer,
+    Price,
+    NightsCount
+} from './Offer.styles'
 import FixedHeightImage from '../../../atoms/FixedHeightImage/FixedHeightImage'
 import { hot } from 'react-hot-loader'
 import halfStar from '../../../images/half.png'
 import fullStar from '../../../images/full.png'
 import emptyStar from '../../../images/empty.png'
-
-
 
 interface Props {
     offer: IOffer;
@@ -40,7 +49,7 @@ const Offer: FC<Props> = ({ offer, onOfferSelect }) => {
 
     return <Card>
         <Container onClick={e => onOfferSelect(offer.id)}>
-            {<FixedHeightImage height={130} zoomOnHover={true} src={photo} />}
+            {<FixedHeightImage height={160} zoomOnHover={true} src={photo} />}
             <Info>
                 <Name>
                     {
