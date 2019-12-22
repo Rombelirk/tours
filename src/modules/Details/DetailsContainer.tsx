@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { fetchData } from '../../actions/fetchData';
+import React, { FC, useEffect } from 'react';
+import { fetchOffer } from '../../actions/fetchData';
 import Details from './Details';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -11,32 +11,33 @@ interface Params {
 }
 
 interface Props extends RouteComponentProps<Params> {
-    offers: IOffer[]
+    offer: IOffer;
 }
 
 const DetailsContainer: FC<Props> = (props) => {
-    const offers = props.offers;
+    const offer = props.offer;
     //@ts-ignore
     const id = props.match.params.id;
 
-    const offer = offers.find(offer => offer.id === id)
+    //@ts-ignore    
+    useEffect(() => { props.fetchOffer(id) }, []);
+
     if (!offer) {
         return null;
     }
 
-
-    console.log(id)
     return <Details offer={offer} />;
 };
 
 const mapStateToProps = (state) => {
+
     return {
-        offers: state.offers.data.offers,
+        offer: state.offers.currentOffer,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ fetchData }, dispatch);
+    return bindActionCreators({ fetchOffer }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailsContainer));

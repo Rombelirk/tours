@@ -40,7 +40,7 @@ const Offer: FC<Props> = ({ offer, onOfferSelect }) => {
 
     return <Card>
         <Container onClick={e => onOfferSelect(offer.id)}>
-            {<FixedHeightImage src={photo} />}
+            {<FixedHeightImage height={130} zoomOnHover={true} src={photo} />}
             <Info>
                 <Name>
                     {
