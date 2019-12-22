@@ -1,7 +1,15 @@
 body {
     margin: 0;
     font-family: 'Nunito';
-    
+    background-color: #f4f4f4;
+}
+
+.slide {
+    background-color:  white !important;
+}
+
+.control-arrow {
+    background-color: transparent !important;
 }
 
 @font-face {

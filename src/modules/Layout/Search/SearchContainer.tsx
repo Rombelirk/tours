@@ -1,4 +1,4 @@
-import React, { useEffect, FC, ReactChild } from 'react';
+import React, { FC, ReactChild } from 'react';
 import { fetchData, fetchOptions } from '../../../actions/fetchData';
 import Search from './Search'
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ interface Props extends RouteComponentProps {
 
 const SearchContainer: FC<Props> = ({ fetchData, fetchOptions, options, history }) => {
     const onSearch = (string) => {
-        history.push("/offers");
+        history.push("/" + string)
         fetchData(string)
     }
     return <Search options={options} onSearch={onSearch} onType={fetchOptions} />;

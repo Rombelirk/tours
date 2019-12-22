@@ -1,4 +1,6 @@
-import { FETCH_DATA, FETCH_OFFER, FETCH_OPTIONS, STORE_DATA, STORE_OFFER, STORE_OPTIONS, } from '../action_types/action_types';
+import {
+    FETCH_DATA, FETCH_OFFER, FETCH_OPTIONS, STORE_DATA, STORE_OFFER, STORE_OPTIONS,
+} from '../action_types/action_types';
 
 export const fetchData = (searchTerm: string) => {
     return { type: FETCH_DATA, searchTerm };
@@ -32,7 +34,7 @@ export const storeOptions = (options) => {
 
 
 export const fetchOptions = (string) => {
-    
+
     return {
         type: FETCH_OPTIONS,
         string,

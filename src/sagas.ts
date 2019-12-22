@@ -15,19 +15,7 @@ function* fetchOffers(action) {
     }
 }
 
-function* fetchOffer(action) {
-    const { id } = action;
-    try {
-        const data = yield axios.get(`https://api.holidu.com/rest/v6/search/offers/${id}`);
-        yield put(storeOffer(data.data));
-    } catch (e) {
-        console.log('error', e);
-
-    }
-}
-
 function* fetchOptions(action) {
-
     const { string } = action;
     try {
         const data = yield axios.get(`https://api.holidu.com/rest/v6/search/autocomplete/${string}`);
@@ -43,6 +31,5 @@ function* fetchOptions(action) {
 
 export default function* mySaga() {
     yield takeEvery(FETCH_DATA, (fetchOffers));
-    yield takeEvery(FETCH_OFFER, fetchOffer);
     yield takeEvery(FETCH_OPTIONS, fetchOptions)
 }

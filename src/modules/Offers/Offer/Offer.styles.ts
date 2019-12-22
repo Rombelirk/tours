@@ -8,6 +8,8 @@ export const Container = styled.div`
  flex-direction: column;
  position: relative;
  cursor: pointer;
+ padding: 10px;
+ box-sizing: border-box;
 `
 export const Info = styled.div`
     width: 100%;

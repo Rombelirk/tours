@@ -18,6 +18,8 @@ import { hot } from 'react-hot-loader'
 import halfStar from '../../../images/half.png'
 import fullStar from '../../../images/full.png'
 import emptyStar from '../../../images/empty.png'
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface Props {
     offer: IOffer;
@@ -32,7 +34,9 @@ const starsToImgMapping = {
 
 
 const Offer: FC<Props> = ({ offer, onOfferSelect }) => {
-    const photo = offer.photos[0] ? offer.photos[0].t : "";
+    if (!offer.photos) {
+        return null
+    }
 
     const getStars = (value) => {
         const fifth = 5 / 100 * value;
@@ -48,9 +52,14 @@ const Offer: FC<Props> = ({ offer, onOfferSelect }) => {
 
 
     return <Card>
-        <Container onClick={e => onOfferSelect(offer.id)}>
-            {<FixedHeightImage height={160} zoomOnHover={true} src={photo} />}
-            <Info>
+        <Container>
+            <Carousel showThumbs={false} showIndicators={false}>
+                {
+                    offer.photos.map(el => <FixedHeightImage zoomOnHover={false} height={220} src={el.t} />)
+                }
+            </Carousel>
+
+            <Info onClick={e => onOfferSelect(offer.id)}>
                 <Name>
                     {
                         offer.details.name

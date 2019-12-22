@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Input from '../../../atoms/Input/Input'
-import { Button } from '@material-ui/core'
-import { Suggestions, Suggestion } from './Search.styles'
+import Button from '../../../atoms/Button/Button'
+import { Container, Suggestions, Suggestion } from './Search.styles'
 import { hot } from 'react-hot-loader'
 import { debounce } from 'lodash';
 
@@ -31,9 +31,9 @@ const SearchSuggestions = ({ options, onSearch, onType }) => {
         setSearchString(value)
     }
 
-    return <div>
+    return <Container>
         <Input onChange={onInputChange} value={searchString} />
-        <Button onClick={onSubmit} color="default">
+        <Button onClick={onSubmit}>
             Search
             </Button>
         {
@@ -47,7 +47,7 @@ const SearchSuggestions = ({ options, onSearch, onType }) => {
                 </Suggestions> : null
         }
 
-    </div>
+    </Container>
 }
 
 export default hot(module)(SearchSuggestions)

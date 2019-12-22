@@ -9,7 +9,7 @@ export const Header = styled.div`
     grid-area: header;
     color: white;
     display: flex;
-    background-color: #2e3130;
+    background-color: #8793ad;
     justify-content: center;
     align-items: center;
     height: 60px;

@@ -1,19 +1,17 @@
 import React, { FC } from 'react'
-import { withRouter } from 'react-router';
 import Offer from './Offer'
-import { RouteComponentProps } from 'react-router'
 import { IOffer } from '../../../interfaces/data'
 
-interface Props extends RouteComponentProps {
+interface Props {
     offer: IOffer
 }
 
-const OfferContainer: FC<Props> = ({ history, ...props }) => {
-    const onOfferSelect = id => {
-        history.push(`/details/${id}`)
+const OfferContainer: FC<Props> = ({ offer }) => {
+    const onOfferSelect = () => {
+        window.location.href = "http://holidu.com" + offer.detailsLink
     }
 
-    return <Offer {...props} onOfferSelect={onOfferSelect} />
+    return <Offer offer={offer} onOfferSelect={onOfferSelect} />
 }
 
-export default withRouter(OfferContainer)
+export default OfferContainer;

@@ -9,7 +9,7 @@ const defaultState = {
 };
 export default (state = defaultState, action) => {
     const { type, data, offer, options } = action;
-    console.log(type, 'type');
+
     switch (type) {
         case STORE_DATA:
             return { ...state, data };

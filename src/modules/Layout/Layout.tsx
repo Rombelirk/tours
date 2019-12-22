@@ -1,5 +1,5 @@
-import React, { FC, ReactChild, useState, FormEvent } from 'react';
-import { Container, Header, Sidebar, Body } from './Layout.styles';
+import React, { FC, ReactChild } from 'react';
+import { Container, Header, Body } from './Layout.styles';
 import Search from './Search/SearchContainer'
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
     onSearch: (string) => void;
 }
 
-const Layout: FC<Props> = ({ children, onSearch }) => {
+const Layout: FC<Props> = ({ children }) => {
     return (
         <Container>
             <Header>

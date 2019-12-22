@@ -1,4 +1,4 @@
-import React, { useEffect, FC, ReactChild } from 'react';
+import React, { FC, ReactChild } from 'react';
 import { fetchData } from '../../actions/fetchData';
 import Layout from './Layout';
 import { connect } from 'react-redux';
