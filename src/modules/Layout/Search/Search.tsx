@@ -1,11 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, FC } from 'react';
 import Input from '../../../atoms/Input/Input';
 import Button from '../../../atoms/Button/Button';
 import { Container, Suggestions, Suggestion } from './Search.styles';
 import { hot } from 'react-hot-loader';
 import { debounce } from 'lodash';
+import { IOption } from '../../../interfaces/data';
 
-const SearchSuggestions = ({ options, onSearch, onType }) => {
+interface Props {
+    options: IOption[];
+    onSearch: (string: string) => void;
+    onType: (string: string) => void;
+}
+
+const SearchSuggestions: FC<Props> = ({ options, onSearch, onType }) => {
     const [searchString, setSearchString] = useState<string>('');
     const [showOptions, setShowOptions] = useState<boolean>(false);
 
