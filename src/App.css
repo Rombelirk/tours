@@ -1,18 +1,10 @@
 body {
     margin: 0;
-    font-family: 'Nunito';
+    font-family: 'Varela_Round';
     background-color: #f4f4f4;
 }
 
-.slide {
-    background-color:  white !important;
-}
-
-.control-arrow {
-    background-color: transparent !important;
-}
-
 @font-face {
-    font-family: "Nunito";
-    src: url(./fonts/Nunito/Nunito-Regular.ttf);
-   }
+    font-family: "Varela_Round";
+    src: url(./fonts/Varela_Round/VarelaRound-Regular.ttf);
+}

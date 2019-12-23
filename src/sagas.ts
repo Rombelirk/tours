@@ -3,7 +3,6 @@ import axios from 'axios';
 import { storeData, storeOffer, storeOptions } from './actions/fetchData';
 import { FETCH_DATA, FETCH_OFFER, FETCH_OPTIONS } from './action_types/action_types';
 
-
 function* fetchOffers(action) {
     const { searchTerm } = action;
     try {
@@ -11,7 +10,6 @@ function* fetchOffers(action) {
         yield put(storeData(data.data));
     } catch (e) {
         console.log('error', e);
-
     }
 }
 
@@ -23,13 +21,10 @@ function* fetchOptions(action) {
         yield put(storeOptions(data.data.items));
     } catch (e) {
         console.log('error', e);
-
     }
 }
 
-
-
 export default function* mySaga() {
-    yield takeEvery(FETCH_DATA, (fetchOffers));
-    yield takeEvery(FETCH_OPTIONS, fetchOptions)
+    yield takeEvery(FETCH_DATA, fetchOffers);
+    yield takeEvery(FETCH_OPTIONS, fetchOptions);
 }

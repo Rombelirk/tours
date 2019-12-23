@@ -1,7 +1,5 @@
-
-
 export interface data {
-    offers: offer[]
+    offers: offer[];
 }
 
 interface offer {
@@ -18,13 +16,13 @@ interface offer {
     rating: {
         count: number; // (count reviews)
         value: number; // 5/100*value => stars
-    }
+    };
     provider: {
         id: string;
         legalName: string;
         logoUrl: string;
         shortName: string;
-    }
+    };
     details: {
         apartmentType: string;
         apartmentTypeTitle: string;
@@ -35,9 +33,8 @@ interface offer {
             lat: number;
             lng: number;
             name: string;
-        }
-    }
-
+        };
+    };
 }
 
 interface photo {

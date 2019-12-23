@@ -1,9 +1,9 @@
 import React, { FC, ReactChild } from 'react';
 import { fetchData, fetchOptions } from '../../../actions/fetchData';
-import Search from './Search'
+import Search from './Search';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { withRouter, RouteComponentProps } from 'react-router'
+import { withRouter, RouteComponentProps } from 'react-router';
 
 interface Props extends RouteComponentProps {
     fetchData: (string) => void;
@@ -14,15 +14,15 @@ interface Props extends RouteComponentProps {
 
 const SearchContainer: FC<Props> = ({ fetchData, fetchOptions, options, history }) => {
     const onSearch = (string) => {
-        history.push("/" + string)
-        fetchData(string)
-    }
+        history.push('/' + string);
+        fetchData(string);
+    };
     return <Search options={options} onSearch={onSearch} onType={fetchOptions} />;
 };
 
 const mapStateToProps = (state) => {
     return {
-        options: state.offers.options
+        options: state.offers.options,
     };
 };
 

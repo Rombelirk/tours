@@ -1,5 +1,5 @@
 export interface IData {
-    offers: IOffer[]
+    offers: IOffer[];
 }
 export interface ILocation {
     lat: number;
@@ -13,7 +13,6 @@ export interface IDetails {
     bedroomsCount: number;
     guestsCount: number;
     name: string;
-
 }
 export interface IProvider {
     id: string;
@@ -33,7 +32,6 @@ export interface IPrice {
     nights: number;
     total: number;
 }
-
 export interface IOffer {
     id: string;
     photos: IPhoto[];
@@ -41,10 +39,9 @@ export interface IOffer {
     price: IPrice;
     rating: IRating;
     provider: IProvider;
-    details: IDetails
+    details: IDetails;
     location: ILocation;
 }
-
 export interface IPhoto {
     hr: string;
     l: string;
@@ -58,4 +55,8 @@ interface IExtendedDetails extends IDetails {
 
 export interface IExtendedOffer extends IOffer {
     details: IExtendedDetails;
+}
+
+export interface IOption {
+    value: string;
 }

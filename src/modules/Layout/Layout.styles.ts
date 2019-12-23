@@ -22,6 +22,7 @@ export const Sidebar = styled.div`
 `;
 
 export const Body = styled.div`
-   width: 1000px;
-   margin: auto;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
 `;

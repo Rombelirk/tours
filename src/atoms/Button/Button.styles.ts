@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const BaseButton = styled.div`
-   background-color: #3862bb;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    background-color: #3862bb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: white;
     padding: 4px 10px;

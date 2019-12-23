@@ -5,9 +5,9 @@ import Offers from './modules/Offers/OffersContainer';
 import Layout from './modules/Layout/LayoutContainer';
 import { Router, Route } from 'react-router';
 import { createBrowserHistory } from 'history';
-import "./app.css";
+import './app.css';
 
-const history = createBrowserHistory()
+const history = createBrowserHistory();
 
 const App: FC = () => {
     return (
@@ -15,7 +15,7 @@ const App: FC = () => {
             <Provider store={store}>
                 <Router history={history}>
                     <Layout>
-                        <Route path="/:searchString" component={Offers} />
+                        <Route path='/:searchString' component={Offers} />
                     </Layout>
                 </Router>
             </Provider>

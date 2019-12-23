@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from 'react';
+import React, { FC } from 'react';
 import { Container, Image } from './FixedHeightImage.styles';
 
 type T = string | number;
@@ -14,13 +14,14 @@ interface Props {
 const FixedHeightImage: FC<Props> = ({ src, zoomOnHover, height, id, onPhotoClick }) => {
     const onClick = () => {
         if (onPhotoClick && id) {
-            onPhotoClick(id)
+            onPhotoClick(id);
         }
-
-    }
-    return (<Container>
-        <Image height={height} onClick={onClick} zoomOnHover={zoomOnHover} src={src} />
-    </Container>);
+    };
+    return (
+        <Container height={height}>
+            <Image height={height} onClick={onClick} zoomOnHover={zoomOnHover} src={src} />
+        </Container>
+    );
 };
 
 export default FixedHeightImage;

@@ -1,6 +1,6 @@
 import React, { FC, ReactChild } from 'react';
 import { Container, Header, Body } from './Layout.styles';
-import Search from './Search/SearchContainer'
+import Search from './Search/SearchContainer';
 
 interface Props {
     children: ReactChild;
