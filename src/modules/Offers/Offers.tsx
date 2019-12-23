@@ -11,7 +11,7 @@ const Offers: FC<Props> = ({ data }) => {
     return (
         <Container>
             {data.offers.map((offer) => (
-                <Offer offer={offer} />
+                <Offer key={offer.id} offer={offer} />
             ))}
         </Container>
     );

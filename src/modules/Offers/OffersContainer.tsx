@@ -25,7 +25,7 @@ const OffersContainer: FC<Props> = ({ data, match, fetchData }) => {
 
     useEffect(loadDataIfSearchStringProvided, []);
 
-    return <Offers data={data} />;
+    return <Offers key={searchString} data={data} />;
 };
 
 const mapStateToProps = (state) => {

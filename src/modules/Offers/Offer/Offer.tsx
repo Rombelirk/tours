@@ -53,8 +53,8 @@ const Offer: FC<Props> = ({ offer, onOfferSelect }) => {
         <Card>
             <Container>
                 <Carousel showThumbs={false} showIndicators={false}>
-                    {offer.photos.map((el) => (
-                        <FixedHeightImage zoomOnHover={false} height={220} src={el.t} />
+                    {offer.photos.map((el, index) => (
+                        <FixedHeightImage key={index} zoomOnHover={false} height={220} src={el.t} />
                     ))}
                 </Carousel>
                 <Info onClick={(e) => onOfferSelect(offer.id)}>

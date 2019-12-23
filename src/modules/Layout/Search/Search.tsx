@@ -28,7 +28,7 @@ const SearchSuggestions = ({ options, onSearch, onType }) => {
     };
 
     return (
-        <Container>
+        <Container onSubmit={onSubmit}>
             <Input onChange={onInputChange} value={searchString} />
             <Button onClick={onSubmit}>Search</Button>
             {showOptions && options.length > 0 ? (

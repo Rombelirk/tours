@@ -19,6 +19,7 @@ export const Info = styled.div`
     justify-content: space-between;
     flex-direction: column;
     flex-grow: 1;
+    cursor: pointer;
 `;
 
 export const Name = styled.div`

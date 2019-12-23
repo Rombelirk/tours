@@ -8,3 +8,14 @@ body {
     font-family: "Varela_Round";
     src: url(./fonts/Varela_Round/VarelaRound-Regular.ttf);
 }
+
+.slide {
+    cursor: default !important;
+}
+
+.control-next {
+    opacity: 1 !important;
+}
+.control-prev {
+    opacity: 1 !important;
+}

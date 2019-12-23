@@ -4,7 +4,6 @@ import Search from './Search/SearchContainer';
 
 interface Props {
     children: ReactChild;
-    onSearch: (string) => void;
 }
 
 const Layout: FC<Props> = ({ children }) => {

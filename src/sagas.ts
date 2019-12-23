@@ -1,7 +1,7 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
-import { storeData, storeOffer, storeOptions } from './actions/fetchData';
-import { FETCH_DATA, FETCH_OFFER, FETCH_OPTIONS } from './action_types/action_types';
+import { storeData, storeOptions } from './actions/fetchData';
+import { FETCH_DATA, FETCH_OPTIONS } from './action_types/action_types';
 
 function* fetchOffers(action) {
     const { searchTerm } = action;
